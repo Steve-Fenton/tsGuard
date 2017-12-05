@@ -1,0 +1,15 @@
+Feature: Object Type Narrowing
+    In order to avoid mis-spelling of the magic "object" string
+    I should be able to call a stongly-named method to narrow a type to number
+
+Scenario: Positive narrow object|number to object
+    Given I import tsGuard
+    And I have a constant of object | number union type
+    When the constant contains a object
+    Then the result of isObject should be "object"
+
+Scenario: Negative narrow object|number to object
+    Given I import tsGuard
+    And I have a constant of object | number union type
+    When the constant contains a number
+    Then the else result of isObject should be "number"

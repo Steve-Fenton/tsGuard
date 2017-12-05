@@ -1,0 +1,15 @@
+﻿Feature: Number Type Narrowing
+    In order to avoid mis-spelling of the magic "number" string
+    I should be able to call a stongly-named method to narrow a type to number
+
+Scenario: Positive narrow string|number to number
+    Given I import tsGuard
+    And I have a constant of number | string union type
+    When the constant contains a number
+    Then the result of isNumber should be "number"
+
+Scenario: Negative narrow string|number to number
+    Given I import tsGuard
+    And I have a constant of number | string union type
+    When the constant contains a string
+    Then the else result of isNumber should be "string"

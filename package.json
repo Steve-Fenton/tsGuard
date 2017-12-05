@@ -1,0 +1,35 @@
+{
+  "author": "Steve Fenton",
+  "name": "tsguard",
+  "description": "TypeScript Type Guard Library.",
+  "keywords": [
+    "type",
+    "typescript",
+    "type guard",
+    "guard"
+  ],
+  "version": "0.0.1",
+  "homepage": "https://github.com/Steve-Fenton/tsGuard",
+  "bugs": "https://github.com/Steve-Fenton/tsGuard/issues",
+  "license": "(Apache-2.0)",
+  "files": [
+    "src/"
+  ],
+  "repository": {
+    "url": "https://github.com/Steve-Fenton/tsGuard"
+  },
+  "main": "./src/tsGuard.js",
+  "types": "./src/tsGuard.d.ts",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "typespec-bdd": "^2.0.1",
+    "@types/node": "^8.0.54",
+    "requirejs": "^2.3.5"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

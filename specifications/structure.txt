@@ -1,0 +1,15 @@
+Feature: Structural Type Narrowing
+    In order to avoid writing a custom type guard
+    I should be able to call a stongly-named method to narrow a type based on structure
+
+Scenario: Positive narrow structure
+    Given I import tsGuard
+    And I have a structural type
+    When the constant contains a required structure
+    Then the result of isStructure should match
+
+Scenario: Negative narrow structure
+    Given I import tsGuard
+    And I have a structural type
+    When the constant does not contain a required structure
+    Then the result of isStructure should not match
