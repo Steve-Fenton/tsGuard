@@ -32,7 +32,7 @@ Simple Custom Type Guards
 This allows you to check that a type matches some structure.
 
     method(example: Structure | AlternateStructure) {
-        if (TSGuard.isStructure<Structure>(example, { name: ''})) {
+        if (TSGuard.isStructure<Structure>(example, { name: TSGuard.string })) {
             // example: Structure
             console.log(example.name);
         } else {
@@ -44,7 +44,7 @@ This allows you to check that a type matches some structure.
 You can narrow down from any type to a structural type...
 
     method(example: any) {
-        if (TSGuard.isStructure<{age: number}>(example, { age: 1})) {
+        if (TSGuard.isStructure<{age: number}>(example, { age: TSGuard.number })) {
             // example: { age: number }
             console.log(example.age);
         } else {
