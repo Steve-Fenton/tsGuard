@@ -1,0 +1,15 @@
+﻿Feature: Instance Type Narrowing
+    In order to easily narrow instances
+    I should be able to call a stongly-named method to narrow a type to an instance
+
+Scenario: Positive narrow ClassA|ClassB to ClassA
+    Given I import tsGuard
+    And I have a constant of ClassA | ClassB union type
+    When the constant contains ClassA
+    Then the result of isInstance should be "ClassA"
+
+Scenario: Negative narrow ClassA|ClassB to ClassA
+    Given I import tsGuard
+    And I have a constant of ClassA | ClassB union type
+    When the constant contains ClassB
+    Then the else result of isInstance should be "ClassB"

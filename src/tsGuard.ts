@@ -1,4 +1,8 @@
 export class TSGuard {
+    public static readonly number = 1;
+    public static readonly string = 'A';
+    public static readonly boolean = true;
+
     static isNumber(item: number | any): item is number {
         return (typeof item === 'number');
     }

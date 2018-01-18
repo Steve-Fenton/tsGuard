@@ -3,6 +3,7 @@ import { TSGuard } from '../src/tsGuard';
 
 export interface Structure {
     name: string;
+    num: number;
 }
 
 export interface AlternateStructure {
@@ -52,12 +53,13 @@ export class GuardSteps {
 
     @when(/^the constant contains a required structure$/i)
     constantContainsStructure(context: any) {
-        context.struc = { name: 'tsGuard' };
+        context.struc = { name: 'tsGuard', num: 5 };
     }
 
     @when(/^the constant does not contain a required structure$/i)
     constantDoesNotContainStructure(context: any) {
-        context.struc = { n: 'tsGuard' };
+        context.struc = { nom: 'tsGuard', num: 5 };
+        //                ^ this property won't match the required "name" property
     }
 
     @then(/^the result of isNumber should be "number"$/i)
@@ -135,7 +137,7 @@ export class GuardSteps {
 
     @then(/^the result of isStructure should match$/i)
     isStructureShouldMatch(context: GuardTestContext) {
-        if (TSGuard.isStructure<Structure>(context.struc, { name: ''})) {
+        if (TSGuard.isStructure<Structure>(context.struc, { name: TSGuard.string, num: TSGuard.number })) {
             Assert.areIdentical('tsGuard', context.struc.name);
         } else {
             Assert.fail();
@@ -144,7 +146,7 @@ export class GuardSteps {
 
     @then(/^the result of isStructure should not match$/i)
     isStructureShouldNotMatch(context: GuardTestContext) {
-        if (TSGuard.isStructure<Structure>(context.struc, { name: ''})) {
+        if (TSGuard.isStructure<Structure>(context.struc, { name: TSGuard.string, num: TSGuard.number })) {
             Assert.fail();
         } else {
             Assert.areIdentical('tsGuard', context.struc.n);
