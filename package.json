@@ -20,13 +20,12 @@
   },
   "main": "./src/tsGuard.js",
   "types": "./src/tsGuard.d.ts",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "typespec-bdd": "^2.0.1",
-    "@types/node": "^8.0.54",
-    "requirejs": "^2.3.5"
+    "typescript": "4.0.3",
+    "typespec-bdd": "2.0.1",
+    "@types/node": "12.12.2",
+    "requirejs": "2.3.6"
   },
   "optionalDependencies": {},
   "engines": {

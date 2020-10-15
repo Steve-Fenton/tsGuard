@@ -58,7 +58,7 @@ export class GuardSteps {
 
     @when(/^the constant does not contain a required structure$/i)
     constantDoesNotContainStructure(context: any) {
-        context.struc = { nom: 'tsGuard', num: 5 };
+        context.struc = { n: 'tsGuard', num: 5 };
         //                ^ this property won't match the required "name" property
     }
 

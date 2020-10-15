@@ -1,18 +1,9 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-      "target": "ES2015",
-      "module": "umd",
-      "strict": true,
-      "experimentalDecorators": true,
-      "noEmitOnError": false,
-      "noFallthroughCasesInSwitch": true,
-      "noImplicitReturns": true,
-      "sourceMap": true,
-      "removeComments": false,
-      "declaration": true,
-      "downlevelIteration": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": false
-    }
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "amd",
+    "target": "ESNext",
+    "strict": true,
+    "experimentalDecorators": true
   }
+}
